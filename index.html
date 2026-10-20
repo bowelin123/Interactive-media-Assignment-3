@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore a locked room. Hover over six objects, follow the clues, and find the missing key.">
+  <title>The Missing Key</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+    <!-- [DESIGN INTENT & CONTEXT]
+    I designed a "mystery puzzle game", where users need to find the key through inspecting different objects, 
+    in order to escape from a locked room. 
+    The specified action is Hover. Instead of a standard click, hovering makes the game more engaing, 
+    while it allow players to inspect objects quickly and follow the clues freely.  -->
+
+    <!-- AI Acknowledgment: 
+     In this assignment, ChatGPT is used to generate images for the objects,
+     and its used for checking the code I wrote, which helps me to find potential errors for improvement.
+     Here’s the prompt used.
+     Prompt: Create images for the objects in a mystery puzzle game, with a old, detective style. 
+     Here's the objects: The Door, The Book, The Lamp, The Frame, The Clock and The Plant.-->
+
+    <!-- I used a simple container to design the layout of the webpage. -->
+    <body> 
+
+    <div class="game-container">
+        
+        <header>
+            <h1>The Missing Key</h1>
+            <p>Hover over the objects to inspect. Find the key to escape the room!</p>
+        </header>
+
+        <!-- This is the grid layout for the 6 cards -->
+        <div class="card-grid" id="game-board">
+            
+            <!-- Card 1: Door -->
+            <div class="card" data-item="door">
+                <div class="card-inner">
+                <div class="card-front">
+                <img src="The Door.png" class="door-img" alt="Door">
+                <span>Door</span>
+              </div>
+                <div class="card-back">
+                  <h3>Locked</h3>
+                  <p>A small brass key should fit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Book -->
+            <div class="card" data-item="book">
+                <div class="card-inner">
+                <div class="card-front">
+                <img src="The Book.png" class="book-img" alt="Book">
+                <span>Book</span>
+              </div>
+                    <div class="card-back">
+                      <h3>A note</h3>
+                      <p>" The soil keeps a small secret."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Lamp -->
+            <div class="card" data-item="lamp">
+                <div class="card-inner">
+                <div class="card-front">
+                <img src="The Lamp.png" class="lamp-img" alt="Lamp">
+                <span>Lamp</span>
+            </div>
+                <div class="card-back">
+                <h3>Nothing here</h3>
+                <p>Only a circle of dust.</p>
+            </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Frame -->
+            <div class="card" data-item="frame">
+                <div class="card-inner">
+                <div class="card-front">
+                <img src="The Frame.png" class="frame-img" alt="Frame">
+                <span>Frame</span>
+            </div>
+                <div class="card-back">
+                <h3>Empty</h3>
+                <p>No hidden note behind it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Clock -->
+            <div class="card" data-item="clock">
+                <div class="card-inner">
+                <div class="card-front">
+                <img src="The Clock.png" class="clock-img" alt="Clock">
+                <span>Clock</span>
+            </div>
+                <div class="card-back">
+                <h3>Just a clock</h3>
+                <p> No clue here.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Plant -->
+            <div class="card" data-item="plant">
+                <div class="card-inner">
+                <div class="card-front">
+                <img src="The Plant.png" class="plant-img" alt="Plant">
+                <span>Plant</span>
+            </div>
+                <div class="card-back">
+                <h3>Found it!🔑</h3>
+                <p>A small brass key is hidden beneath the pot.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Status area and reset button -->
+        <footer>
+            <p id="status-text">Objects inspected: <span id="count">0</span>/6</p>
+            <button id="reset-btn">Start Again</button>
+        </footer>
+
+    </div>
+
+</body>
+</html>
